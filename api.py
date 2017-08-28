@@ -44,6 +44,9 @@ def checkToken():
 			sendMail()
 	return render_template('new.html')
 
+@app.route('/al')
+def show_all():
+   return render_template('show_all1.html', videoValidate = videoValidate.query.all() )
 
 @app.route('/', methods = ['GET', 'POST'])
 def requesToken():
