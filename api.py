@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = 'random string'
 
 db = SQLAlchemy(app)
 
-class videoValidate(db.Model):
+class videoValidate(db.Model): 
 	id = db.Column('video_id', db.Integer, primary_key = True)
 	email = db.Column(db.String(100))
 	name = db.Column(db.String(80))
@@ -44,7 +44,7 @@ def checkToken():
 			sendMail()
 	return render_template('new.html')
 
-@app.route('/al')
+@app.route('/al') #test route to check bd 
 def show_all():
    return render_template('show_all1.html', videoValidate = videoValidate.query.all() )
 
@@ -58,7 +58,7 @@ def requesToken():
 def sendMail():
 	testC()
 	token()
-	sg = sendgrid.SendGridAPIClient(apikey='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')
+	sg = sendgrid.SendGridAPIClient(apikey='MY_PRECIOUS')
 	data = {
 	"personalizations": [
 	    {
